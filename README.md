@@ -16,13 +16,13 @@ Setup Instructions
 
 2. Install Truffle
  
-     npm install -g truffle
+       npm install -g truffle
 
 3. Initialize a Truffle Project
   
-      mkdir VotingApp
-      cd VotingApp
-      truffle init
+       mkdir VotingApp
+       cd VotingApp
+       truffle init
 
 4. Install Ganache
    - Download and install Ganache from [ganache](trufflesuite.com/ganache)
@@ -35,11 +35,11 @@ Setup Instructions
   
 7. Compile the Contracts
    
-     truffle compile
+       truffle compile
   
 8. Migrate the Contracts
    
-     truffle migrate
+       truffle migrate
 
 9. Open Truffle Console
     
@@ -48,31 +48,31 @@ Setup Instructions
 10. Inside the Truffle console:
     - Initalize Instance
 
-       const voting = await Voting.deployed();
+          const voting = await Voting.deployed();
   
     - Add Candidates
       
-      await voting.addCandidate("Alice", { from: YOUR_ACCOUNT_ADDRESS });
-      await voting.addCandidate("Bob", { from: YOUR_ACCOUNT_ADDRESS });
+          await voting.addCandidate("Mary", { from: YOUR_ACCOUNT_ADDRESS });
+          await voting.addCandidate("John", { from: YOUR_ACCOUNT_ADDRESS });
      
     - Vote for Candidates
    
-      await voting.vote(1, { from: YOUR_ACCOUNT_ADDRESS });
-      await voting.vote(2, { from: ANOTHER_ACCOUNT_ADDRESS });
+          await voting.vote(1, { from: YOUR_ACCOUNT_ADDRESS });
+          await voting.vote(2, { from: ANOTHER_ACCOUNT_ADDRESS });
      
       View Results
      
-      let candidate1 = await voting.getCandidate(1);
-      console.log(candidate1);
+          let candidate1 = await voting.getCandidate(1);
+          console.log(candidate1);
       
-      let candidate2 = await voting.getCandidate(2);
-      console.log(candidate2);
+          let candidate2 = await voting.getCandidate(2);
+          console.log(candidate2);
       
-      let allCandidates = await voting.getAllCandidates();
-      console.log(allCandidates);
+          let allCandidates = await voting.getAllCandidates();
+          console.log(allCandidates);
 
     - Check the Owner
     
-       const owner = await voting.owner();
-       console.log("Owner address:", owner);
+          const owner = await voting.owner();
+          console.log("Owner address:", owner);
   
